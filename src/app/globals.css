@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b1b2b;
+  --ink-soft: #16283b;
+  --paper: #f7f4ee;
+  --paper-dim: #efeade;
+  --charcoal: #1c2530;
+  --slate: #5b6470;
+  --hairline: #d9d4c8;
+  --brass: #b8924a;
+  --brass-soft: #d9b87a;
+  --good: #3f6b4f;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-charcoal: var(--charcoal);
+  --color-slate: var(--slate);
+  --color-hairline: var(--hairline);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--charcoal);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.ledger-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--hairline) 0,
+    var(--hairline) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+  height: 1px;
+}
+
+.admin-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--hairline);
+  background: white;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  outline: none;
+}
+
+.admin-input:focus {
+  border-color: var(--brass);
+}
